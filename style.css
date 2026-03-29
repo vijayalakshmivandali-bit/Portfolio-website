@@ -1,0 +1,154 @@
+/* ---- Variables & Base ---- */
+:root {
+    --navy: #1B2A4A;
+    --navy-mid: #223460;
+    --teal: #2A9D8F;
+    --teal-lt: #3AB5A6;
+    --gold: #E9C46A;
+    --white: #FFFFFF;
+    --off-white: #F4F6F9;
+    --text-dark: #1B2A4A;
+    --shadow: 0 4px 18px rgba(27, 42, 74, 0.08);
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background: var(--off-white);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* ---- Shared Components (Cards & Buttons) ---- */
+.skill-card, .project-card, .cert-card, .contact-card {
+    background: var(--white);
+    border-radius: 14px;
+    transition: var(--transition);
+    height: 100%;
+    box-shadow: var(--shadow);
+}
+
+.skill-card:hover, .project-card:hover, .cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(27, 42, 74, 0.14);
+}
+
+.btn-primary, .btn-outline-primary:hover {
+    background: var(--teal) !important;
+    border-color: var(--teal) !important;
+    color: var(--white) !important;
+}
+
+.btn-primary:hover {
+    background: var(--navy) !important;
+    border-color: var(--navy) !important;
+}
+
+/* ---- Navigation ---- */
+.navbar {
+    background: var(--navy) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    padding: 14px 0;
+}
+
+.navbar-brand, .nav-link { color: var(--white) !important; font-weight: 500; }
+.nav-link:hover { color: var(--gold) !important; }
+
+/* ---- Hero Section ---- */
+.hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--teal) 100%);
+    color: var(--white);
+    padding-top: 80px;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--gold), var(--teal-lt));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--gold);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Section Utilities ---- */
+.section-title {
+    color: var(--navy);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--teal);
+}
+
+/* ---- Skills & Icons ---- */
+.skill-icon, .contact-icon {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 1.8rem;
+}
+
+.css { background: #dbeafe; color: #2563eb; }
+.html { background: #fee2e2; color: #dc2626; }
+.bootstrap { background: #ede9fe; color: #7c3aed; }
+.javascript { background: #fef9c3; color: #ca8a04; }
+.core-java { background: #ffedd5; color: #ea580c; }
+.advance-java { background: #fce7f3; color: #db2777; }
+.mysql { background: #d1fae5; color: #059669; }
+.dsa { background: #e0f2fe; color: #0284c7; }
+
+.skill-bar { background: #e2e8f0; border-radius: 10px; height: 8px; overflow: hidden; }
+.skill-progress { height: 100%; background: linear-gradient(90deg, var(--teal), var(--navy)); }
+
+/* ---- Projects & Contact ---- */
+.project-image {
+    height: 160px; display: flex; align-items: center; justify-content: center;
+    color: var(--white); border-radius: 14px 14px 0 0;
+}
+
+.kbc { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); }
+.travel { background: linear-gradient(135deg, var(--teal), var(--teal-lt)); }
+.gqt { background: linear-gradient(135deg, #2d6a4f, #52b788); }
+
+.contact-section { background: var(--navy); color: var(--white); }
+.contact-card { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); }
+.contact-card:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* Social Links */
+.social-link {
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+    color: var(--white);
+    background: var(--teal);
+}
+
+.social-link:hover { transform: translateY(-4px); color: var(--gold); }
+.linkedin { background: #0077b5; }
+.hackerrank { background: #2EC866; }
+
+/*  Responsive */
+@media (max-width: 768px) {
+    .profile-photo { width: 200px; height: 200px; }
+    .display-4 { font-size: 2.2rem; }
+}
